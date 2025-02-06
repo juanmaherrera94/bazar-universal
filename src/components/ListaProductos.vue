@@ -1,11 +1,17 @@
 <template>
   <div>
-
-    <h2> <span>⛺</span>Lista de productos</h2>
+    <h2>Lista de productos</h2>
     
-    <input v-model="buscar" placeholder="Buscar producto..." class="input">
-    <h3>Resultados encontrados: {{ productos.length}}</h3>
-  <div v-for="(productosPorCategoria, categoria) in productosPorCategoria" :key="categoria">
+    <!-- Contenedor para el logo y el input -->
+    <div class="logo-input-container">
+      <img src="https://cdn.dribbble.com/users/7878347/screenshots/17622244/media/2c2ad6a8051f6c83fcb115688c5a3929.jpg?resize=1600x1200&vertical=center"
+        alt="logo" class="logo">
+      <input v-model="buscar" placeholder="Buscar producto..." class="input">
+    </div>
+
+    <h3>Resultados encontrados: {{ productos.length }}</h3>
+
+    <div v-for="(productosPorCategoria, categoria) in productosPorCategoria" :key="categoria">
       <h4>Categoria: {{ categoria }} ({{ productosPorCategoria.length }} resultados)</h4>
       <div class="productos">
         <div 
@@ -20,7 +26,6 @@
           <p>Categoría: {{ producto.category }}</p>
           <img :src="producto.thumbnail" :alt="producto.title" />
         </div>
-        
       </div>
       <button class="button" @click="volverAtras">Volver atras</button>
     </div>
@@ -89,6 +94,26 @@ div {
   text-align: center;
 }
 
+/* Contenedor para el logo y el input */
+.logo-input-container {
+  display: flex;
+  align-items: center; /* Alinea el logo y el input verticalmente */
+  margin-bottom: 20px; /* Espacio entre el campo de búsqueda y el resto de los productos */
+}
+
+.logo {
+  width: 100px; /* Tamaño del logo */
+  margin-right: 15px; /* Espacio entre el logo y el input */
+}
+
+.input {
+  padding: 15px;
+  margin-top: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 250px; /* Ajusta el tamaño del input */
+}
+
 /* Contenedor de productos */
 .productos {
   display: grid;
@@ -127,33 +152,8 @@ div {
   border-radius: 4px; /* Esquinas redondeadas de la imagen */
   margin-bottom: 10px;
 }
-/* From Uiverse.io by LightAndy1 */ 
-.group {
-  display: flex;
-  line-height: 28px;
-  align-items: center;
-  position: relative;
-  max-width: 190px;
-}
 
-/* From Uiverse.io by cohencoo */ 
-.input {
-  border-radius: 10px;
-  outline: 2px solid #FEBF00;
-  border: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: #e2e2e2;
-  outline-offset: 3px;
-  padding: 10px 1rem;
-  transition: 0.25s;
-}
-
-.input:focus {
-  outline-offset: 5px;
-  background-color: #fff
-}
-
-/* From Uiverse.io by vikiWayne */ 
+/* Estilo para el botón */
 .button {
   padding: 1em 2em;
   border: none;
@@ -193,6 +193,4 @@ button::before {
 button:hover::before {
   width: 250%;
 }
-
-
 </style>

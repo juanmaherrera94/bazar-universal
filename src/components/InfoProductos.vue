@@ -1,6 +1,12 @@
 <template>
   <div class="container" v-if="producto">
     <div class="producto-info">
+      <!-- Contenedor para el logo y el input -->
+      <div class="logo-input-container">
+        <img src="https://cdn.dribbble.com/users/7878347/screenshots/17622244/media/2c2ad6a8051f6c83fcb115688c5a3929.jpg?resize=1600x1200&vertical=center"
+          alt="logo" class="logo">
+        <input type="text" placeholder="Buscar producto..." class="input">
+      </div>
       <h2>{{ producto.title }}</h2>
       <img :src="producto.thumbnail" :alt="producto.title" />
       <p><b>Descripción:</b> {{ producto.description }}</p>
@@ -41,11 +47,11 @@ const comprar = () => {
 
 }
 
+
 onMounted(obtenerProducto);
 </script>
 
 <style scoped>
-
 /* Contenedor principal centrado */
 .container {
   display: flex;
@@ -55,6 +61,24 @@ onMounted(obtenerProducto);
   width: 100%; /* 100% de ancho */
   background-color: #f4f4f4;
   text-align: center; /* Asegura que el contenido se centre horizontalmente */
+}
+
+.logo-input-container {
+  display: flex;
+  align-items: center; /* Alinea verticalmente el logo y el input */
+  margin-bottom: 20px; /* Añade un poco de espacio debajo */
+}
+
+.logo {
+  width: 100px; /* Tamaño del logo */
+  margin-right: 8px; /* Espacio entre el logo y el input */
+}
+
+.input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 200px; /* Ajusta el tamaño del input */
 }
 
 .producto-info {
@@ -115,5 +139,4 @@ button::before {
 button:hover::before {
   width: 250%;
 }
-
 </style>

@@ -6,7 +6,7 @@
     />
     <h1>Bazar Online</h1>
 
-    <input class="input" type="text" placeholder="Buscar un producto" v-model="buscar" />
+    <input type="text" placeholder="Buscar un producto" v-model="buscar" />
     <button class="button" @click="busqueda">Buscar</button>
   </div>
 </template>
