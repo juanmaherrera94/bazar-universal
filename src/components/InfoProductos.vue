@@ -5,10 +5,12 @@
       <div class="logo-input-container">
         <img src="https://cdn.dribbble.com/users/7878347/screenshots/17622244/media/2c2ad6a8051f6c83fcb115688c5a3929.jpg?resize=1600x1200&vertical=center"
           alt="logo" class="logo">
+          
         <input type="text" placeholder="Buscar producto..." class="input" v-model="buscar" >
         <button @click="busqueda">Buscar</button>
         <p class="carrito">🛒{{contador }} </p>
       </div>
+      <button class="button" @click="comprar">Comprar</button>
       <h2>{{ producto.title }}</h2> 
       <img :src="producto.thumbnail" :alt="producto.title" />
       <p v-for="(imagen,index) in producto.images" :key="index">
@@ -20,7 +22,7 @@
       <p><b>Categoria:</b> {{ producto.category }}</p>
       <p><b>Valoracion:</b> {{ producto.rating }} ⭐</p>
       <button class="button" @click="volverAInicio">Volver a inicio</button>
-      <button class="button" @click="comprar">Comprar</button>
+
     </div>
   </article>
   <p v-else>Mostrando productos</p>
@@ -51,6 +53,7 @@ const volverAInicio = () => {
 
 const comprar = () => {
   contador.value++
+  alert("Añadido al carrito")
 }
 
 const buscar = ref<string>("");
@@ -79,7 +82,7 @@ onMounted(obtenerProducto);
   justify-content: center;
   align-items: center;
   height: 50%; /* 100% de la altura de la ventana */
-  width: 100%; /* 100% de ancho */
+  width: 90%; /* 100% de ancho */
   background-color: #f4f4f4;
   text-align: center; /* Asegura que el contenido se centre horizontalmente */
 }
