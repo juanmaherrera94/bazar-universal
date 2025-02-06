@@ -1,4 +1,10 @@
 {
+  
+    "meta": {
+      "total": 194,
+      "skip": 0,
+      "limit": 30
+    },
   "products": [
     {
       "id": 170,
@@ -1878,8 +1884,6 @@
       ],
       "thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S10/thumbnail.png"
     }
-  ],
-  "total": 194,
-  "skip": 0,
-  "limit": 30
+  ]
+
 }
