@@ -1,18 +1,17 @@
 <template>
   <div>
-    <h2>Lista de productos</h2>
-    
-    <!-- Contenedor para el logo y el input -->
+   <!-- Contenedor para el logo y el input -->
     <div class="logo-input-container">
       <img src="https://cdn.dribbble.com/users/7878347/screenshots/17622244/media/2c2ad6a8051f6c83fcb115688c5a3929.jpg?resize=1600x1200&vertical=center"
         alt="logo" class="logo">
-      <input v-model="buscar" placeholder="Buscar producto..." class="input">
+      <input v-model="buscar" placeholder="Buscar producto..." class="input" >
+      <button class="button">Buscar</button>
     </div>
 
     <h3>Resultados encontrados: {{ productos.length }}</h3>
 
     <div v-for="(productosPorCategoria, categoria) in productosPorCategoria" :key="categoria">
-      <h4>Categoria: {{ categoria }} ({{ productosPorCategoria.length }} resultados)</h4>
+      <h4>Categoria: {{ categoria }} ({{ productosPorCategoria.length }} :resultados)</h4>
       <div class="productos">
         <div 
           v-for="producto in productosPorCategoria" 
