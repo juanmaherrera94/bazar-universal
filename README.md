@@ -38,12 +38,16 @@ Devuelve una lista de productos que coinciden con la búsqueda realizada.
 GET /api/items/:id
 Devuelve los detalles completos de un producto específico, usando su id.
 
-#Requisitos
+# Requisitos
 Lenguaje: TypeScript
 SEO: La aplicación está optimizada para que Google y otros motores de búsqueda puedan indexarla correctamente.
 Diseño: La interfaz debe ser sencilla, atractiva y fácil de usar. Se puede usar un catálogo de componentes o realizar un diseño propio.
 #Instalación
 Para correr la aplicación en tu máquina local, sigue estos pasos:
+
+# Despliegue
+
+https://boisterous-licorice-3eaac3.netlify.app/
 
 # 1. Clonar el repositorio
 bash
