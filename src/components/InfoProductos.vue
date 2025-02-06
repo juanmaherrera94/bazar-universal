@@ -36,7 +36,7 @@ import axios from 'axios';
 
 const route = useRoute();
 const router = useRouter();
-const producto = ref<{ id: number; title: string; description: string; price: number; thumbnail: string; category: string } | null>(null);
+const producto = ref<{ id: number; title: string; description: string; price: number; thumbnail: string; category: string; images: string[]; rating: number;}  | null>(null);
 
 const obtenerProducto = async () => {
   try {
